@@ -1,0 +1,17 @@
+site_name: Vsnips Documents
+
+nav:
+  - Home: index.md
+  - English:
+      - index: en/index.md
+      - first: en/first.md
+  - 中文文档:
+      - index: zh/index.md
+      - first: zh/first.md
+  # - About: about.md
+
+theme:
+  name: "material"
+
+plugins:
+  - search

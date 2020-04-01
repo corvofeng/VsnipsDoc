@@ -1,0 +1,28 @@
+runtime: python37
+# api_version: 1
+
+handlers:
+- url: /
+  static_files: site/index.html
+  upload: site/index.html
+
+- url: /(.*\.css)$
+  static_files: site/\1
+  upload: site/css/.*\.css$
+
+- url: /(.*\.js)$
+  static_files: site/\1
+  upload: site/js/.*\.js$
+
+- url: /(.*\.ico)$
+  static_files: site/\1
+  upload: site/img/.*\.ico$
+
+- url: /(.*\.(ttf|woff|woff2))$
+  static_files: site/\1
+  upload: site/fonts/.*\.ico$
+
+
+- url: /(.*)/
+  static_files: site/\1/index.html
+  upload: site/(.*)
