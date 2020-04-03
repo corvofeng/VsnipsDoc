@@ -8,8 +8,6 @@ Allow user use Ultisnips in vscode.
 > all ultisnips functions can be used in vscode, I will do my best.
 > Please feel free to give an issue or pull requests.
 
-There are two 
-
 | English Documents | 中文文档 |
 | ---- | ---- |
 | [introduction](en/intro.md) | [简介](zh/intro.md) |
