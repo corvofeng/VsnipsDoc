@@ -9,7 +9,7 @@ trigger:
 pool: zhn
 
 variables:
-  docdir: /home/azure/Workspaces/vsnips-doc
+  docdir: /home/azure/vsnips-doc
 
 steps:
 - script: echo "$(docdir)"
