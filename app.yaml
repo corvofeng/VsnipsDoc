@@ -6,6 +6,11 @@ handlers:
   static_files: site/index.html
   upload: site/index.html
 
+- url: /(.*\.json)
+  mime_type: application/json
+  static_files: site/\1
+  upload: site/(.*\.json)
+
 - url: /(.*\.css)$
   static_files: site/\1
   upload: site/css/.*\.css$
@@ -26,3 +31,7 @@ handlers:
 - url: /(.*)/
   static_files: site/\1/index.html
   upload: site/(.*)
+
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: site/\1
+  upload: site/(.*\.(bmp|gif|ico|jpeg|jpg|png))

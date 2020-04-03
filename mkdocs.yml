@@ -3,15 +3,37 @@ site_name: Vsnips Documents
 nav:
   - Home: index.md
   - English:
-      - index: en/index.md
-      - first: en/first.md
+      - introduction: en/intro.md
+      - comments: en/comments.md
+      - example snips: en/example_snips.md
   - 中文文档:
-      - index: zh/index.md
-      - first: zh/first.md
+      - 简介: zh/intro.md
+      - 注释功能的使用: zh/comments.md
+      - 示例代码片段: zh/example_snips.md
   # - About: about.md
 
 theme:
   name: "material"
+  include_search_page: false
+  search_index_only: true
+  feature:
+    tabs: false
+  language: 'en'
 
 plugins:
   - search
+
+markdown_extensions:
+  - toc:
+     permalink: True 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# markdown_extensions:
+#   - admonition
+# 
+google_analytics: ['UA-162568845-1', 'vsnips.corvo.fun']
+
+extra:
+  disqus: 'vsnips'
+  # search:
