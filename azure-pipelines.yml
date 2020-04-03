@@ -6,13 +6,13 @@
 trigger:
 - master
 
-pool: NoPool
+pool: zhn
 
 variables:
-  blogdir: /home/azure/Workspaces/blog/
+  docdir: /home/azure/Workspaces/vsnips-doc
 
 steps:
-- script: echo "$(blogdir)"
+- script: echo "$(docdir)"
   displayName: 'Run a one-line script'
 
 - script: |
@@ -21,9 +21,8 @@ steps:
   displayName: 'pwd and echo dir'
 
 - script: |
-    rsync --delete -rv $(System.DefaultWorkingDirectory)/_config.yml $(blogdir)
-    rsync --delete -rv $(System.DefaultWorkingDirectory)/source/ $(blogdir)/source/
-  displayName: 'Sync the blog'
+    rsync --delete -rv $(System.DefaultWorkingDirectory)/* $(docdir)
+  displayName: 'Sync the doc'
 
-- script: cd $(blogdir) && hexo g
-  displayName: 'Generate the blog'
+- script: cd $(docdir) && mkdocs build
+  displayName: 'Generate the doc'
