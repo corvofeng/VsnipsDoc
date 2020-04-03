@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: NoPool
+
+variables:
+  blogdir: /home/azure/Workspaces/blog/
+
+steps:
+- script: echo "$(blogdir)"
+  displayName: 'Run a one-line script'
+
+- script: |
+    pwd
+    echo "$(System.DefaultWorkingDirectory)"
+  displayName: 'pwd and echo dir'
+
+- script: |
+    rsync --delete -rv $(System.DefaultWorkingDirectory)/_config.yml $(blogdir)
+    rsync --delete -rv $(System.DefaultWorkingDirectory)/source/ $(blogdir)/source/
+  displayName: 'Sync the blog'
+
+- script: cd $(blogdir) && hexo g
+  displayName: 'Generate the blog'
