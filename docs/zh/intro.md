@@ -14,7 +14,7 @@ UltiSnips 为 VIM 中的插件, 有关 UltiSnips 的详细简介请看[这里][1
 在 UltiSnips 中, 你可以这样用:
 
 ```snippets
-# 请注意, 下面的片段必须保存在 python.snippets, 这样才能被Python语言使用.
+# 请注意, 下面的片段必须保存在 python.snippets, 这样才能被 Python 语言使用.
 snippet dbg "Use IPython to debug"
 # ---------- XXX: Can't GIT add [START] ---------- #
 import IPython
@@ -32,7 +32,7 @@ endsnippet
 
 ## VScode 代码片段管理
 
-在 VScode 中, 有自己原生的代码片段管理方式, 你可以依据[snippets语法][4]来编写自己的代码片段. 但它有几个弊端,
+在 VScode 中, 有自己原生的代码片段管理方式, 你可以依据 [snippets语法][4] 来编写自己的代码片段. 但它有几个弊端,
 
 1. 以json的形式保存的代码片段对换行支持并不友好, 多行的片段写起来并不方便
 2. 多台电脑同步代码片段并不容易, 我发现好多各个语言都有自己的代码片段插件, 比如: [C/C++ Snippets][5], [Bootstrap 3 Snippets][6].
@@ -44,7 +44,7 @@ endsnippet
 
 ## Vsnips 基础使用
 
-> 该插件基于 VScode 原生的[代码补全功能][8], 无论你先前是否有过 vim 或是 UltiSnips 的使用经历,
+> 该插件基于 VScode 原生的[代码补全功能][8], 无论你先前是否有过 Vim 或是 UltiSnips 的使用经历,
 > 都可直接使用此插件. 我已经将部分的 UltiSnips 进行了适配, 并且默认给所有用户使用.
 
 当然如果你先前已经使用过了 UltiSnips, 有了自己的代码片段,

@@ -10,6 +10,8 @@ nav:
       - 简介: zh/intro.md
       - 注释功能的使用: zh/comments.md
       - 示例代码片段: zh/example_snips.md
+      - Vsnips可用的命令: zh/available_commands.md
+      - Vsnips可用的配置项: zh/available_config.md
   # - About: about.md
 
 theme:
@@ -26,6 +28,7 @@ plugins:
 markdown_extensions:
   - toc:
      permalink: True 
+  - admonition
   - pymdownx.tasklist:
       custom_checkbox: true
 

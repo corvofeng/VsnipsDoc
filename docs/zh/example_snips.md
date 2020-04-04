@@ -15,7 +15,7 @@ IPython.embed(using=False)
 endsnippe
 ```
 
-## 与 Vim 变量, 函数的交互
+## 与 Vim 变量, 函数的交互的代码片段
 
 Vsnips 提供了对于 vimrc 中定义变量的查找, 在解析代码片段时, 会将vim中的变量进行替换, 以下方的代码片段为例.
 
@@ -39,11 +39,10 @@ endsnippet
 ```
 
 使用`!v`开头的表示需要由 Vim 来解析, 上面的片段中`!v strftime("%Y-%m-%d %H:%M:%S")`, `!v g:snips_author`有两个 Vim 变量.
-`strftime`为时间的处理, `g:snips_author`表示引用在vimrc中定义的变量(`let g:snips_author="corvo"`).
+`strftime`为时间的处理, `g:snips_author`表示引用在 vimrc 中定义的变量(`let g:snips_author="corvo"`).
 
-## 与自定义函数的交互
 
-### 解析时替换
+## 解析时替换
 
 在 Vim 中使用 UltiSnips 时, 可以使用`!p snip.rv`表示此占位符由 Python 解析, 以下方代码为例:
 
@@ -80,13 +79,13 @@ function get_quoting_style() {
 }
 ```
 
-### 需要依靠代码的具体位置确定
+## 需要获取当前文件属性的代码片段
 
 上方的自定义函数可以在解析 snippet 代码片段时直接替换, 但是有一些函数, 例如我们想要获取当前文件的文件名,
-就需要动态的处理这个函数. Vsnips 中的具体实现请查看[repush函数][1], 我们会在补全操作时调用`get_snip_body`
-函数, 如果片段中存在js模板函数, 我们将会根据上下文信息进行替换.
+就需要动态的处理这个函数. Vsnips 的策略是生成中间函数, 该种类型的函数使用 JavaScript编写,
+如果片段中存在 JavaScript 模板函数, 我们将会在补全时根据上下文信息进行替换.
 
-Vsnips中, 自定义了一类函数, `!js {func_name}`的形式替换进模板. 仍然以这个标题为例
+Vsnips 中, 自定义了一类函数, `!js {func_name}`的形式替换进模板. 仍然以这个标题为例:
 
 ```
 snippet title "Hexo post header" b
@@ -107,17 +106,16 @@ ${0}
 endsnippet
 ```
 
-`get_markdown_title`是需要根据当前位置的上下文片段来确定的, 所以我们在处理代码片段中的这部分时, 返回了一个js函数,
-详细信息请查看[script_tpl.ts][2].
+`get_markdown_title`是需要根据当前位置的上下文片段来确定的, 在 Vsnips 中,
+此种类型的参数在书写时, 需要两部分代码, 
 
 ```javascript
+// 函数1: 告诉 Vsnips , 此函数为 JavaScript 函数, 函数名称为 js_markdown_title.
 function get_markdown_title() {
   return jsFuncDecorator("js_markdown_title");  // `!js js_markdown_title`
 }
-```
-而`js_markdown_title`也对应了一个函数:
 
-```javascript
+// 函数2: 真正触发补全操作时, 这个 JavaScript 函数会被调用, 并返回 markdown 文件对应的文件名.
 function js_markdown_title(vsContext: VSnipContext) {
   let fn = vsContext.document.fileName;
   return path.basename(fn, path.extname(fn));
