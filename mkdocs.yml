@@ -1,5 +1,5 @@
 site_name: Vsnips Documents
-url: https://vsnips.corvo.fun
+site_url: https://vsnips.corvo.fun
 
 nav:
   - Home: index.md
