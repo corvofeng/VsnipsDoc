@@ -16,4 +16,3 @@ Allow user use Ultisnips in vscode.
 | [available commands](en/available_commands.md) | [Vsnips可用的命令](zh/available_commands.md) |
 | [available config](en/available_config.md) | [Vsnips可用的配置项](zh/available_config.md) |
 
-

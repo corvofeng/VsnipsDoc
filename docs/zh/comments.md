@@ -4,8 +4,12 @@
 
 ### Python 代码补全
 
-![Peek 2019-11-28 21-07](../img/comments_python.gif)
+![](../img/comments_python.gif)
 
 ### TypeScript 代码补全
 
-![Peek 2019-11-28 21-08](../img/comments_ts.gif)
+![](../img/comments_ts.gif)
+
+### Golang 代码补全
+
+![](../img/comments_golang.gif)
