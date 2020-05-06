@@ -7,6 +7,8 @@ nav:
       - introduction: en/intro.md
       - comments: en/comments.md
       - example snips: en/example_snips.md
+      - available_commands: en/available_commands.md
+      - available_config : en/available_config.md
   - 中文文档:
       - 简介: zh/intro.md
       - 注释功能的使用: zh/comments.md

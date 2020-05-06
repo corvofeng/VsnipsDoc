@@ -2,7 +2,7 @@
 
 For details of Ultisnips, please refer [here][1].
 
-![ultisnips][2].
+![ultisnips](../img/ultisnips.gif).
 
 It's easy to write an UltiSnips sippets, for example, in `Python`,
 I usually use `import IPython; IPython.embed()` for debugging.
@@ -79,5 +79,30 @@ snippet full_title "Python title fully"
 
 endsnippet
 ```
+
+## Have done
+
+* [x] Multi language completions support after installing
+* [x] Allow user add their own Ultisnips.
+    * [x] From Ultisnips to VScode snippets.
+    * [x] Support strftime
+    * [x] Allow user define variables
+    * [x] Allow some functions(Rewrite by javascript)
+* [x] Syntax highlight for snippets
+* [x] Allow user define their own functions
+* [x] Support autoDocstring(Python, TypeScript, Golang)
+* [x] Support box command
+
+## Doing
+
+- [ ] Support extends and priority in Ultisnips
+- [ ] Add support for golang function comments.
+
 [1]: https://github.com/SirVer/ultisnips
 [3]: https://user-images.githubusercontent.com/12025071/62412148-14cad280-b631-11e9-8d9c-01a65a2550ef.gif
+[4]: https://code.visualstudio.com/docs/editor/userdefinedsnippets#_creating-your-own-snippets
+[5]: https://marketplace.visualstudio.com/items?itemName=hars.CppSnippets
+[6]: https://marketplace.visualstudio.com/items?itemName=wcwhitehead.bootstrap-3-snippets
+[7]: https://user-images.githubusercontent.com/12025071/62412552-19928500-b637-11e9-8335-dfe3f0ca0688.gif
+[8]: https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider
+[9]: https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
