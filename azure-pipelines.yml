@@ -26,12 +26,12 @@ steps:
   displayName: 'pwd and echo dir'
 
 - script: |
-    rsync --delete -rv $(System.DefaultWorkingDirectory)/* $(docdir)
-  displayName: 'Sync the doc'
-
-- script: |
     mkdocs gh-deploy
-  displayName: 'Sync the doc'
+  displayName: 'Deploy the doc to github repo'
 
-- script: cd $(docdir) && mkdocs build
-  displayName: 'Generate the doc'
+# - script: |
+#     rsync --delete -rv $(System.DefaultWorkingDirectory)/* $(docdir)
+#   displayName: 'Sync the doc'
+# 
+# - script: cd $(docdir) && mkdocs build
+#   displayName: 'Generate the doc'
