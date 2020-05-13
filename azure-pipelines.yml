@@ -6,12 +6,17 @@
 trigger:
 - master
 
+# pip3 install mkdocs
+# pip3 install mkdocs-material
 pool: Digital
 
 variables:
   docdir: /home/azure/vsnips-doc
 
 steps:
+- checkout: self
+  persistCredentials: true
+
 - script: echo "$(docdir)"
   displayName: 'Run a one-line script'
 
@@ -22,6 +27,10 @@ steps:
 
 - script: |
     rsync --delete -rv $(System.DefaultWorkingDirectory)/* $(docdir)
+  displayName: 'Sync the doc'
+
+- script: |
+    mkdocs gh-deploy
   displayName: 'Sync the doc'
 
 - script: cd $(docdir) && mkdocs build
