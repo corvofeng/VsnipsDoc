@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: zhn
+pool: Digital
 
 variables:
   docdir: /home/azure/vsnips-doc
