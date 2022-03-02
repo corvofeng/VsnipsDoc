@@ -1,5 +1,9 @@
 # Vsnips
 
+
+```
+ext install corvofeng.Vsnips
+```
 Allow user use Ultisnips in vscode.
 
 ![](./img/vsnips.gif)

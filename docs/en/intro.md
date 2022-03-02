@@ -1,3 +1,16 @@
+
+
+```
+ext install corvofeng.Vsnips
+```
+
+![](/img/vsnips.gif)
+
+> It is under development, although I can't guarantee that
+> all ultisnips functions can be used in vscode, I will try my best.
+> Please feel free to give an issue or pull requests.
+
+
 ## UltiSnips
 
 For details of Ultisnips, please refer [here][1].
