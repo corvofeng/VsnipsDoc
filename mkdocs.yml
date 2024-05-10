@@ -38,8 +38,11 @@ markdown_extensions:
 # markdown_extensions:
 #   - admonition
 # 
-google_analytics: ['UA-162568845-1', 'vsnips.corvo.fun']
+# google_analytics: ['UA-162568845-1', 'vsnips.corvo.fun']
 
 extra:
+  analytics:
+    provider: google
+    property: G-0Y555DK586
   disqus: 'vsnips'
   # search:
